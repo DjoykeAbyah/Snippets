@@ -1,44 +1,38 @@
 <?php
 
-namespace Adyen\Tests\Unit;
+namespace Adyen\Service\Checkout;
 
-use Adyen\AdyenException;
 use Adyen\Model\Checkout\Amount;
 use Adyen\Model\Checkout\CreateCheckoutSessionRequest;
 use Adyen\Service\Checkout\PaymentsApi;
-use PHPUnit\Framework\TestCase;
 
-class SnippetTest extends TestCase
-{
-    public function testSnippetSuccess()
-    {
-        // Set up the client and service.
-        $client = new \Adyen\Client();
+// Include your idempotency key when you make an API request.
+//neccesary?
+$requestOptions['idempotencyKey'] = "YOUR_IDEMPOTENCY_KEY";
 
-        //has issue with $Bk in API key use single quotes?
-        $client->setXApiKey('AQEshmfxLI3HbhJLw0m/n3Q5qf3VeIdYCppEfGBbyawB/isehnLWag91Hdz+6UkQwV1bDb7kfNy1WIxIIkxgBw==-Kphz51iO9Nk6tKXEw5F2OYFfs0dGnzgbHLHq54YFcak=-9+yyk%f:@K$Bk=c;');
-        $client->setEnvironment(\Adyen\Environment::TEST);
-        $client->setApplicationName('Test Application');
-        $client->setTimeout(30);
+// Set up the client and service.
+$client = new \Adyen\Client();
 
-        $service = new PaymentsApi($client);
-        
-        // Creating Amount Object
-        $amount = new Amount();
-        $amount
-            ->setValue(1500)
-            ->setCurrency("EUR");
+//has issue with $Bk in API key use single quotes?
+$client->setXApiKey('YOUR_API_KEY');
+$client->setEnvironment(\Adyen\Environment::TEST);
+$client->setApplicationName('Test Application');
+$client->setTimeout(30);
 
-        // Create the actual Request
-        $sessionRequest = new CreateCheckoutSessionRequest();
-        $sessionRequest
-            ->setMerchantAccount("PluginDemo_Djoyke_TEST")
-            ->setAmount($amount)
-            ->setReference("payment-test")
-            ->setReturnUrl("https://your-company.com/...");
-        
-        $result = $service->sessions($sessionRequest);
-        // Assert that the result is not null
-        $this->assertNotNull($result);
-    }
-}
+$service = new PaymentsApi($client);
+
+// Creating Amount Object
+$amount = new Amount();
+$amount
+    ->setValue(1500)
+    ->setCurrency("EUR");
+
+// Create the actual Request
+$sessionRequest = new CreateCheckoutSessionRequest();
+$sessionRequest
+    ->setMerchantAccount("YOUR_MERCHANT_ACCOUNT")
+    ->setAmount($amount)
+    ->setReference("payment-test")
+    ->setReturnUrl("https://your-company.com/...");
+
+$result = $service->sessions($sessionRequest);
