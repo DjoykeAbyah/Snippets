@@ -1,0 +1,13 @@
+curl https://checkout-test.adyen.com/v71/sessions \
+-H "x-API-key: YOUR_API_KEY" \
+-H "content-type: application/json" \
+-d '{
+  "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
+  "amount": {
+      "value": 1000,
+      "currency": "EUR"
+  },
+  "returnUrl": "https://your-company.com/checkout?shopperOrder=12xy..",
+  "reference": "YOUR_PAYMENT_REFERENCE",
+  "countryCode": "NL"
+}'

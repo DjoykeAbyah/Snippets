@@ -35,4 +35,6 @@ $sessionRequest
     ->setReference("payment-test")
     ->setReturnUrl("https://your-company.com/...");
 
+
+    $sessionRequest->jsonSerialize();//to json
 $result = $service->sessions($sessionRequest);
