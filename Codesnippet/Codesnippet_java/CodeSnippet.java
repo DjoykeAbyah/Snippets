@@ -17,7 +17,8 @@ CreateCheckoutSessionRequest sessionRequest = new CreateCheckoutSessionRequest()
 PaymentsApi checkoutPaymentsApi = new PaymentsApi(client);
 Amount amount = new Amount().currency("EUR").value(1000L);
 sessionRequest.setAmount(amount);
+sessionRequest.setMerchantAccount("YOUR_MERCHANT_ACCOUNT");
 sessionRequest.setReturnUrl("https://your-company.com/checkout?shopperOrder=12xy...");
 sessionRequest.setReference("YOUR_PAYMENT_REFERENCE");
-sessionRequest.setCountryCode("String Countrycode");
+sessionRequest.setCountryCode("NL");
 CreateCheckoutSessionResponse createCheckoutSessionResponse = checkoutPaymentsApi.sessions(sessionRequest);

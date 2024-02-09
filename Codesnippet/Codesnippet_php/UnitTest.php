@@ -7,7 +7,6 @@ use Adyen\Model\Checkout\CreateCheckoutSessionRequest;
 use Adyen\Service\Checkout\PaymentsApi;
 
 // Include your idempotency key when you make an API request.
-//neccesary?
 $requestOptions['idempotencyKey'] = "YOUR_IDEMPOTENCY_KEY";
 
 // Set up the client and service.
@@ -36,5 +35,5 @@ $sessionRequest
     ->setReturnUrl("https://your-company.com/...");
 
 
-    $sessionRequest->jsonSerialize();//to json
+$sessionRequest->jsonSerialize();//to json
 $result = $service->sessions($sessionRequest);

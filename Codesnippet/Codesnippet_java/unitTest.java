@@ -17,10 +17,13 @@ public class TestSnippet extends BaseTest
         //Setup Client and Service
         Client client = new Client("YOUR_API_KEY", Environment.TEST);
 
+        //idempotency key?
+
         //create session request
         CreateCheckoutSessionRequest sessionRequest = new CreateCheckoutSessionRequest();
         PaymentsApi checkoutPaymentsApi = new PaymentsApi(client);
         Amount amount = new Amount().currency("EUR").value(1000L);
+        sessionRequest.setMerchantAccount("YOUR_MERCHANT_ACCOUNT");
         sessionRequest.setAmount(amount);
         sessionRequest.setReturnUrl("https://your-company.com/checkout?shopperOrder=12xy...");
         sessionRequest.setReference("YOUR_PAYMENT_REFERENCE");

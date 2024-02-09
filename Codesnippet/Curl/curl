@@ -1,6 +1,7 @@
 curl https://checkout-test.adyen.com/v71/sessions \
 -H "x-API-key: YOUR_API_KEY" \
 -H "content-type: application/json" \
+-H "Idempotencykey: UUID" \
 -d '{
   "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
   "amount": {

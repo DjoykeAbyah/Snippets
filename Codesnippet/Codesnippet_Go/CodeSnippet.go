@@ -9,20 +9,20 @@ import (
 
 func main() {
 	client := adyen.NewClient(&common.Config{
-		ApiKey:      "your api key",
+		ApiKey: "YOUR_API_KEY",
 		Environment: common.TestEnv,
 	})
 	service := client.Checkout()
 
 	req := service.PaymentsApi.SessionsInput()
 	req = req.CreateCheckoutSessionRequest(checkout.CreateCheckoutSessionRequest{
-		MerchantAccount: "your merchant account",
+		MerchantAccount: "YOUR_MERCHANT_ACCOUNT",
 		Amount: checkout.Amount{
 			Value:    1250,
 			Currency: "EUR",
 		},
-		Reference:   "ref",
-		CountryCode: common.PtrString("NL"),
 		ReturnUrl:   "https://your-company.com/checkout?shopperOrder=12xy..."})
+		Reference:   "YOUR_PAYMENT_REFERENCE",
+		CountryCode: common.PtrString("NL"),
 	res := service.PaymentsApi.SessionsInput()
 }

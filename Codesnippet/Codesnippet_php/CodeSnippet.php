@@ -7,8 +7,8 @@ $requestOptions['idempotencyKey'] = "YOUR_IDEMPOTENCY_KEY";
 $client = new \Adyen\Client();
 $client->setXApiKey('YOUR_API_KEY');
 $client->setEnvironment(\Adyen\Environment::TEST);
-$client->setApplicationName('Test Application');
-$client->setTimeout(30);
+$client->setApplicationName('Test Application');//need this?
+$client->setTimeout(30);//need this?
 
 $service = new PaymentsApi($client);
 
@@ -23,7 +23,8 @@ $sessionRequest = new CreateCheckoutSessionRequest();
 $sessionRequest
     ->setMerchantAccount("YOUR_MERCHANT_ACCOUNT")
     ->setAmount($amount)
-    ->setReference("payment-test")
+    ->setReference("YOUR_PAYMENT_REFERENCE")
     ->setReturnUrl("https://your-company.com/...");
+    ->setCountryCode("NL");
 
 $result = $service->sessions($sessionRequest);

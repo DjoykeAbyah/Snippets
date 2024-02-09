@@ -21,9 +21,9 @@ class Program
 
         var checkoutSessionRequest = new CreateCheckoutSessionRequest(
             merchantAccount: "YOUR_MERCHANT_ACCOUNT",
-            reference: "YOUR_PAYMENT_REFERENCE",
-            returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
             amount: new Amount("EUR", 1000L),
+            returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
+            reference: "YOUR_PAYMENT_REFERENCE",
             countryCode: "NL");
 
         var createCheckoutSessionResponse = checkout.Sessions(checkoutSessionRequest);

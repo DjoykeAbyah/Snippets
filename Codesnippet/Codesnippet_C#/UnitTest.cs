@@ -16,7 +16,7 @@ namespace Adyen.Test
             // Set up the client and service.
             var config = new Config
             {
-                XApiKey = "AQEshmfxLI3HbhJLw0m/n3Q5qf3VeIdYCppEfGBbyawB/isehnLWag91Hdz+6UkQwV1bDb7kfNy1WIxIIkxgBw==-Kphz51iO9Nk6tKXEw5F2OYFfs0dGnzgbHLHq54YFcak=-9+yyk%f:@K$Bk=c;",
+                XApiKey = "YOUR_API_KEY",
                 Environment = Environment.Test
             };
             var client = new Client(config);
@@ -26,10 +26,10 @@ namespace Adyen.Test
             var requestOptions = new RequestOptions { IdempotencyKey = "YOUR_IDEMPOTENCY_KEY" };
 
             var checkoutSessionRequest = new CreateCheckoutSessionRequest(
-                merchantAccount: "PluginDemo_Djoyke_TEST",
-                reference: "YOUR_PAYMENT_REFERENCE",
-                returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
+                merchantAccount: "YOUR_MERCHANT_ACCOUNT",
                 amount: new Amount("EUR", 1000L),
+                returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
+                reference: "YOUR_PAYMENT_REFERENCE",
                 countryCode: "NL");
 
             // Perform the API request.

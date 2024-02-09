@@ -10,10 +10,10 @@ const requestOptions = { idempotencyKey: "YOUR_IDEMPOTENCY_KEY" };
 
 //create session request
 checkoutApi.PaymentsApi.sessions({
-    amount: { currency: "EUR", value: 1000 },
-    reference: "YOUR_PAYMENT_REFERENCE",
-    returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
     merchantAccount: 'YOUR_MERCHANT_ACCOUNT',
+    amount: { currency: "EUR", value: 1000 },
+    returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
+    reference: "YOUR_PAYMENT_REFERENCE",
     countryCode: "NL",
     channel: checkout.PaymentSetupRequest.ChannelEnum.Web,
 })
