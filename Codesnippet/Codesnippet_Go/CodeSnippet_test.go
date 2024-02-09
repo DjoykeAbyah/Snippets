@@ -31,7 +31,6 @@ func Test_Snippet_Session(t *testing.T) {
 			ReturnUrl:   "https://your-company.com/checkout?shopperOrder=12xy...",
 		})
 		res, _, _ := service.PaymentsApi.Sessions(context.Background(), req)
-		//res, _, _ := service.PaymentsApi.Sessions(req)
 		fmt.Print(res.ReturnUrl)//prints
 	})
 }
