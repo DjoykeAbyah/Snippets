@@ -1,13 +1,10 @@
 <?php
 
 // Include your idempotency key when you make an API request.
-//neccesary?
 $requestOptions['idempotencyKey'] = "YOUR_IDEMPOTENCY_KEY";
 
 // Set up the client and service.
 $client = new \Adyen\Client();
-
-//has issue with $Bk in API key use single quotes?
 $client->setXApiKey('YOUR_API_KEY');
 $client->setEnvironment(\Adyen\Environment::TEST);
 $client->setApplicationName('Test Application');
@@ -21,7 +18,7 @@ $amount
     ->setValue(1500)
     ->setCurrency("EUR");
 
-// Create the actual Request
+// Create Request
 $sessionRequest = new CreateCheckoutSessionRequest();
 $sessionRequest
     ->setMerchantAccount("YOUR_MERCHANT_ACCOUNT")

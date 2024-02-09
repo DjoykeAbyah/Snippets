@@ -10,12 +10,6 @@ namespace Adyen.Test
     [TestClass]
     public class SnippetTest
     {
-        // [TestMethod]
-        // public void MyTest()
-        // {
-        //     Assert.IsNotNull("Does this work?");
-        // }
-
         [TestMethod]
         public void TestCreateCheckoutSession()
         {
@@ -45,7 +39,6 @@ namespace Adyen.Test
             Assert.IsNotNull(createCheckoutSessionResponse);
             Assert.IsNotNull(createCheckoutSessionResponse.Id);
             Assert.IsNotNull(createCheckoutSessionResponse.SessionData);
-
         }
     }
 }

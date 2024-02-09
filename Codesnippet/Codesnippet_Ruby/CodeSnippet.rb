@@ -1,9 +1,11 @@
 require "adyen-ruby-api-library"
 
+# Set up the client and service.
 adyen = Adyen::Client.new
 adyen.api_key = 'AF5XXXXXXXXXXXXXXXXXXXX'
 adyen.env = :test # Set to "live" for live environment
 
+# create session request
 request_body = {
   :merchantAccount => 'YOUR_MERCHANT_ACCOUNT',
   :amount => {

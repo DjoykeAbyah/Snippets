@@ -8,7 +8,6 @@ const client = new Client({ apiKey: "YOUR_API_KEY", environment: "TEST" });
 const checkoutApi = new CheckoutAPI(client);
 const requestOptions = { idempotencyKey: "YOUR_IDEMPOTENCY_KEY" };
 
-
 //create session request
 checkoutApi.PaymentsApi.sessions({
     amount: { currency: "EUR", value: 1000 },

@@ -1,6 +1,5 @@
 //test imports
 import nock from "nock";
-import {createClient} from "../__mocks__/base";//not used because used own create client
 import { SessionResultResponse } from "../typings/checkout/sessionResultResponse";
 
 // import the required class
@@ -11,7 +10,7 @@ import { checkout } from "../typings";
 //setup client and service
 const client = new Client({ apiKey: "YOUR_API_KEY", environment: "TEST" });
 const checkoutApi = new CheckoutAPI(client);
-// const requestOptions = { idempotencyKey: "YOUR_IDEMPOTENCY_KEY" };//never read
+// const requestOptions = { idempotencyKey: "YOUR_IDEMPOTENCY_KEY" };???
 
 //create session request
 checkoutApi.PaymentsApi.sessions({
@@ -58,5 +57,3 @@ afterEach(() => {
         expect(resultOfPaymentSessionResponse.id).toEqual("CS12345678");
         expect(resultOfPaymentSessionResponse.status).toEqual(SessionResultResponse.StatusEnum.Completed);
     });
-
-    //exit code 2 because of the unused import

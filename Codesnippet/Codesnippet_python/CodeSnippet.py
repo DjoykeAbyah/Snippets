@@ -1,10 +1,11 @@
-
 import Adyen
 
+# Set up the client and service.
 adyen = Adyen.Adyen()
 adyen.client.xapikey = "YOUR_X-API-KEY"
 adyen.client.platform = "test" # The environment to use library in.
 
+# create session request
 json_request = {
   "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
   "amount": {

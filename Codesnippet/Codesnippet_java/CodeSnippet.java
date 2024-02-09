@@ -8,9 +8,9 @@ import com.adyen.model.checkout.CreateCheckoutSessionRequest;
 import com.adyen.model.checkout.CreateCheckoutSessionResponse;
 import com.adyen.enums.Environment;
 
-
 //Setup Client and Service
 Client client = new Client("YOUR_API_KEY", Environment.TEST);
+//idempotency key?
 
 //create session request
 CreateCheckoutSessionRequest sessionRequest = new CreateCheckoutSessionRequest();

@@ -7,7 +7,6 @@ import com.adyen.model.checkout.Amount;
 import com.adyen.model.checkout.CreateCheckoutSessionRequest;
 import com.adyen.model.checkout.CreateCheckoutSessionResponse;
 import com.adyen.enums.Environment;
-
 import org.junit.Test;
 
 public class TestSnippet extends BaseTest
@@ -15,7 +14,6 @@ public class TestSnippet extends BaseTest
     @Test
     public void SnippetTest() throws Exception
     {
-
         //Setup Client and Service
         Client client = new Client("YOUR_API_KEY", Environment.TEST);
 
@@ -28,6 +26,5 @@ public class TestSnippet extends BaseTest
         sessionRequest.setReference("YOUR_PAYMENT_REFERENCE");
         sessionRequest.setCountryCode("String Countrycode");
         CreateCheckoutSessionResponse createCheckoutSessionResponse = checkoutPaymentsApi.sessions(sessionRequest);
-        
     }
 }
