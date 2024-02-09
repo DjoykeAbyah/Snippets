@@ -1,4 +1,5 @@
-package adyen
+package adyen//or
+package checkout//check this 
 
 import (
 	"github.com/adyen/adyen-go-api-library/v9/src/adyen"

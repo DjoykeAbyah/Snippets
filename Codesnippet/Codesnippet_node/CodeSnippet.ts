@@ -6,7 +6,7 @@ import { checkout } from "../../typings";
 //setup client and service
 const client = new Client({ apiKey: "YOUR_API_KEY", environment: "TEST" });
 const checkoutApi = new CheckoutAPI(client);
-// const requestOptions = { idempotencyKey: "YOUR_IDEMPOTENCY_KEY" };//never read, when would I need this
+const requestOptions = { idempotencyKey: "YOUR_IDEMPOTENCY_KEY" };
 
 
 //create session request
