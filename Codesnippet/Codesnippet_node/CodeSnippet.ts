@@ -1,7 +1,5 @@
 // import the required class
-import {CheckoutAPI} from "../../services";
-import Client from "../../client";
-import { checkout } from "../../typings";
+const { Client, CheckoutAPI, Types} = require('@adyen/api-library');
 
 //setup client and service
 const client = new Client({ apiKey: "YOUR_API_KEY", environment: "TEST" });
@@ -15,7 +13,7 @@ checkoutApi.PaymentsApi.sessions({
     returnUrl: "https://your-company.com/checkout?shopperOrder=12xy..",
     reference: "YOUR_PAYMENT_REFERENCE",
     countryCode: "NL",
-    channel: checkout.PaymentSetupRequest.ChannelEnum.Web,
+    channel: Types.checkout.PaymentSetupRequest.ChannelEnum.Web,
 })
     .then((response) => {
         console.log(response);

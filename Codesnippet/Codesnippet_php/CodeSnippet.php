@@ -1,5 +1,9 @@
 <?php
 
+use Adyen\Model\Checkout\Amount;
+use Adyen\Model\Checkout\CreateCheckoutSessionRequest;
+use Adyen\Service\Checkout\PaymentsApi;
+
 // Include your idempotency key when you make an API request.
 $requestOptions['idempotencyKey'] = "YOUR_IDEMPOTENCY_KEY";
 
