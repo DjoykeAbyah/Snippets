@@ -14,7 +14,7 @@ func Test_Snippet_Session(t *testing.T) {
 	t.Run("Session", func(t *testing.T) {
 
 		client := adyen.NewClient(&common.Config{
-			ApiKey:"YOUR_API_KEY",
+			ApiKey:      "YOUR_API_KEY",
 			Environment: common.TestEnv,
 		})
 		service := client.Checkout()
@@ -31,6 +31,6 @@ func Test_Snippet_Session(t *testing.T) {
 			ReturnUrl:   "https://your-company.com/checkout?shopperOrder=12xy...",
 		})
 		res, _, _ := service.PaymentsApi.Sessions(context.Background(), req)
-		fmt.Print(res.ReturnUrl)//prints
+		fmt.Print(res)
 	})
 }

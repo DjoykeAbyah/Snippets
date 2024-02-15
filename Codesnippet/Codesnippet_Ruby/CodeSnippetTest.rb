@@ -2,11 +2,11 @@ require 'json'
 require 'adyen-ruby-api-library'
 
 client = Adyen::Client.new
-client.api_key = 'AQEshmfxLI3HbhJLw0m/n3Q5qf3VeIdYCppEfGBbyawB/isehnLWag91Hdz+6UkQwV1bDb7kfNy1WIxIIkxgBw==-Kphz51iO9Nk6tKXEw5F2OYFfs0dGnzgbHLHq54YFcak=-9+yyk%f:@K$Bk=c;'
+client.api_key = 'YOUR_API_KEY'
 client.env = :test # Set to "live" for live environment
 
 request_body = {
-    merchantAccount: 'PluginDemo_Djoyke_TEST',
+    merchantAccount: 'YOUR_MERCHANT_ACCOUNT',
     amount: {
     value: 1000,
     currency: 'EUR'

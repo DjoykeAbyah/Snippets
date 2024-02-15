@@ -15,8 +15,6 @@ $client = new \Adyen\Client();
 //has issue with $Bk in API key use single quotes?
 $client->setXApiKey('YOUR_API_KEY');
 $client->setEnvironment(\Adyen\Environment::TEST);
-$client->setApplicationName('Test Application');
-$client->setTimeout(30);
 
 $service = new PaymentsApi($client);
 

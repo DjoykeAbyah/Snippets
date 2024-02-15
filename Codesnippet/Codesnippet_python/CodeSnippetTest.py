@@ -16,9 +16,8 @@ class SnippetTest(unittest.TestCase):
 
     def test_sessions_success(self):
         request = {'amount': {"value": "1000", "currency": "EUR"}, 'reference': "YOUR_PAYMENT_REFERENCE",
-                   'merchantAccount': "PluginDemo_Djoyke_TEST",
+                   'merchantAccount': "YOUR_MERCHANT_ACCOUNT",
                    'returnUrl': "https://your-company.com/checkout?shopperOrder=12xy..", 'countryCode': "NL"}
 
         result = self.adyen.checkout.payments_api.sessions(request)
-        print(result.message)  # Add this line to print the result.message
-        #does this work because I don't compare it to anything else or is this okay because I get a proper and sessiondata?
+        print(result.message)

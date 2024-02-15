@@ -1,8 +1,8 @@
 curl https://checkout-test.adyen.com/v71/sessions \
--H 'x-API-key: AQEshmfxLI3HbhJLw0m/n3Q5qf3VeIdYCppEfGBbyawB/isehnLWag91Hdz+6UkQwV1bDb7kfNy1WIxIIkxgBw==-Kphz51iO9Nk6tKXEw5F2OYFfs0dGnzgbHLHq54YFcak=-9+yyk%f:@K$Bk=c;' \
+-H 'YOUR_API_KEY' \
 -H "content-type: application/json" \
 -d '{
-  "merchantAccount": "PluginDemo_Djoyke_TEST",
+  "merchantAccount": "YOUR_MERCHANT_ACCOUNT",
   "amount": {
       "value": 1000,
       "currency": "EUR"
